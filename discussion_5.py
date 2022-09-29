@@ -74,7 +74,6 @@ class TestAllMethods(unittest.TestCase):
 		self.assertEqual(aaa_count,3)
 		abcabc_count = count_a('abcabc')
 		self.assertEqual(abcabc_count,2)
-
 		pass
 
 
@@ -106,6 +105,13 @@ class TestAllMethods(unittest.TestCase):
 
 	# Check to see whether the warehouse correctly return the item with the highest price
 	def test_warehouse_max_price(self):
+		max_price = 0
+		max_price_item = None
+		for item in self.items:
+			if item.price > max_price:
+				max_price = item.price
+				max_price_item = item
+		return max_price_item 
 		pass
 		
 
